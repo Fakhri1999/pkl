@@ -1,0 +1,38 @@
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-7 align-self-center">
+      <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Tambah Perangkat</h4>
+      <div class="d-flex align-items-center">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb m-0 p-0">
+            <li class="breadcrumb-item"><a href="/perangkat" class="text-muted">Perangkat</a></li>
+            <li class="breadcrumb-item text-muted active">Tambah Perangkat</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <a href="/perangkat" class="btn btn-secondary mb-2">Kembali</a>
+      <div class="card">
+        <div class="card-body">
+          <form action="/perangkat/add" method="POST">
+            <h4 class="card-title">Tambah Perangkat</h4>
+            <label for="id">ID Perangkat</label>
+            <input type="text" class="form-control mb-3" name="id" id="id" placeholder="Masukkan ID Perangkat" required>
+            <label for="nama">Nama Perangkat</label>
+            <input type="text" class="form-control mb-3" name="nama" id="nama" placeholder="Masukkan Nama Perangkat"
+              required>
+            <label for="deskripsi">Deskripsi (Optional)</label>
+            <textarea class="form-control mb-3" name="deskripsi" id="deskripsi" rows="3"
+              placeholder="Masukkan Deskripsi"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
