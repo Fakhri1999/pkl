@@ -1,6 +1,11 @@
+const Perangkat = require('../models/Perangkat')
+
 const homeController = {
-  index: (req, res) => {
-    res.render("home");
+  index: async (req, res) => {
+    let data = await Perangkat.getAllPerangkat();
+    res.render("home", {
+      perangkatCount: data.length
+    });
   }
 };
 
