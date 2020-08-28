@@ -17,7 +17,8 @@ const perangkatController = {
     let insertData = {
       id_perangkat: inputData.id,
       nama_perangkat: inputData.nama,
-      deskripsi_perangkat: inputData.deskripsi
+      deskripsi_perangkat: inputData.deskripsi,
+      token: inputData.token
     };
     let result = await Perangkat.addPerangkat(insertData);
     res.redirect("/perangkat");
@@ -36,7 +37,8 @@ const perangkatController = {
     let updateData = {
       id_perangkat: inputData.id,
       nama_perangkat: inputData.nama,
-      deskripsi_perangkat: inputData.deskripsi
+      deskripsi_perangkat: inputData.deskripsi,
+      token: inputData.token
     };
     let result = await Perangkat.updatePerangkat(updateData, id);
     res.redirect("/perangkat");

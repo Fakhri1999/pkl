@@ -24,12 +24,15 @@
             <label for="id">ID Perangkat</label>
             <input type="text" class="form-control mb-3" name="id" id="id" placeholder="Masukkan ID Perangkat"
               value="{{editData.id_perangkat}}" required>
+            <label for="token">Token Perangkat (Optional)</label>
+            <input type="text" class="form-control mb-3" name="token" id="token" placeholder="Masukkan Token Perangkat"
+              value="{{editData.token}}">
             <label for="nama">Nama Perangkat</label>
             <input type="text" class="form-control mb-3" name="nama" id="nama" placeholder="Masukkan Nama Perangkat"
               value="{{editData.nama_perangkat}}" required>
             <label for="deskripsi">Deskripsi (Optional)</label>
             <textarea class="form-control mb-3" name="deskripsi" id="deskripsi" rows="3"
-              placeholder="Masukkan Deskripsi"> {{editData.deskripsi_perangkat}}</textarea>
+              placeholder="Masukkan Deskripsi">{{editData.deskripsi_perangkat}}</textarea>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

@@ -23,10 +23,11 @@ const settingController = {
   },
 
   updateGatewaySetting: async (req, res) => {
-    let { device_id, access_token } = req.body;
+    let { device_id, access_token, topic } = req.body;
     let updateData = {
       device_id,
-      access_token
+      access_token,
+      topic
     };
 
     let result = await settingModel.updateGatewaytData(updateData);
