@@ -1,7 +1,7 @@
 const knex = require('knex')({
   client: 'sqlite3',
   connection: {
-    filename: 'portal-web.db'
+    filename: '../database/portal-web.db'
   },
   useNullAsDefault: true
 })
