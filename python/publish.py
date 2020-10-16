@@ -15,7 +15,7 @@ records = cursor.fetchall()
 ACCESS_TOKEN = records[0][2]
 cursor.close()
 
-THINGSBOARD_HOST = ''
+THINGSBOARD_HOST = 'iotcloud.tujuhlangit.id'
 
 # Data capture and upload interval in seconds
 INTERVAL=2
@@ -40,8 +40,9 @@ try:
         humidity = uniform(1.0, 100.0)
         temperature = uniform(1.0, 100.0)
         humidity = round(humidity, 2)
-        temperature = round(temperature, 2)
-        print(u"Temperature: {:g}\u00b0C, Humidity: {:g}%".format(temperature, humidity))
+        temperature = round(temperature, 2)        
+        print(u"Temperature: {:g} C, Humidity: {:g}%".format(temperature, humidity))
+        #print(u"Temperature: {:g}\u00b0C, Humidity: {:g}%".format(temperature, humidity))
         sensor_data['temperature'] = temperature
         sensor_data['humidity'] = humidity
 
