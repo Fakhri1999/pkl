@@ -5,6 +5,7 @@ import paho.mqtt.client as mqtt
 import json
 from random import uniform
 import sqlite3
+import time
 
 sqliteConnection = sqlite3.connect('../database/portal-web.db')
 cursor = sqliteConnection.cursor()
@@ -15,6 +16,7 @@ records = cursor.fetchall()
 ACCESS_TOKEN = records[0][2]
 cursor.close()
 
+time.sleep(5)
 THINGSBOARD_HOST = 'iotcloud.tujuhlangit.id'
 
 # Data capture and upload interval in seconds
