@@ -32,6 +32,23 @@ const settingController = {
 
     let result = await settingModel.updateGatewaytData(updateData);
     res.redirect("/setting/gateway");
+  },
+
+  restartService: async (req, res) => {
+    const { exec } = require("child_process");
+
+    exec("sudo systemctl restart iot.web.service && sudo systemctl restart iot.python.service", (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    });
+    document.write('Service sedang proses restart. Silahkan tunggu sebentar kemudian refresh halaman ini');
   }
 };
 
