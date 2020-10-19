@@ -1,22 +1,21 @@
 import sqlite3
 
-def readSqliteTable():
+def checkPerangkat():
     try:
         sqliteConnection = sqlite3.connect('../database/portal-web.db')
         cursor = sqliteConnection.cursor()
         print("Connected to SQLite")
-
-        sqlite_select_query = "SELECT * from gateway;"
-        cursor.execute(sqlite_select_query)
-        records = cursor.fetchall()
-        print("Total rows are:  ", len(records))
-        # for r in records:
-        #     print(r)
-        print(records[0][2])
-
+        id = input("Masukkan ID Perangkat : ")
+        id = (id, )
+        cursor.execute("SELECT * FROM perangkat WHERE id_perangkat=?", id)
+        records = cursor.fetchall()        
         cursor.close()
+        if len(records):
+            return True
+        else:
+            return False
 
     except sqlite3.Error as error:
         print("Failed to read data from sqlite table", error)
 
-readSqliteTable()
+print(checkPerangkat())
